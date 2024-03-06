@@ -7,7 +7,6 @@ ENV PYTHONUNBUFFERED=1 \
     PIP_DEFAULT_TIMEOUT=100 \
     PYSETUP_PATH="/opt/pysetup" \
     VENV_PATH="/opt/pysetup/.venv" \
-    TAILWIND_CLI_PATH="/opt/tailwind" \
     S6_KILL_GRACETIME=0 \
     S6_OVERLAY_VERSION=3.1.6.2 \
     S6_CMD_WAIT_FOR_SERVICES_MAXTIME=0 \
@@ -35,8 +34,7 @@ RUN tar -C /s6-install -Jxpf /tmp/s6-overlay-noarch.tar.xz \
 # Build static files
 COPY . /app
 WORKDIR /app
-RUN python manage.py tailwind --skip-checks build \
- && python manage.py collectstatic --no-input --skip-checks --clear
+RUN python manage.py collectstatic --no-input --skip-checks --clear
 
 # Stage 3: Run service
 FROM python-base as production
