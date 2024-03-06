@@ -95,7 +95,7 @@ THIRD_PARTY_APPS = [
     "allauth.socialaccount",
     "compressor",
     "crispy_forms",
-    "crispy_tailwind",
+    "crispy_bootstrap5",
     "django_extensions",
     "django_htmx",
     "django_q",
@@ -373,9 +373,9 @@ COMPRESS_FILTERS = {
 }
 
 # django-crispy-forms
-CRISPY_ALLOWED_TEMPLATE_PACKS = "tailwind"
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 
-CRISPY_TEMPLATE_PACK = "tailwind"
+CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 # django-debug-toolbar
 DEBUG_TOOLBAR_CONFIG = {

@@ -22,7 +22,7 @@ dependencies = [
   "django-anymail[amazon-ses]",
   "django-storages[s3]",
   "django-compressor",
-  "django-tailwind-cli",
+  "django-bootstrap5",
   "django-template-partials",
   "django-lifecycle",
   "django-q2",
@@ -38,7 +38,7 @@ dependencies = [
   "heroicons[django]",
   "gunicorn",
   "boto3",
-  "crispy-tailwind",
+  "crispy-bootstrap5",
   "Pillow",
   "psycopg[binary]",
   "sentry-sdk",
@@ -68,8 +68,10 @@ htmx = "{{ cookiecutter.project_name }}/static/vendors/htmx/htmx.min.js:2.0.2"
 
 [tool.falco.work]
 server = "python manage.py migrate && python manage.py runserver {address}"
-tailwind = "python manage.py tailwind watch"
 worker = "python manage.py qcluster"
+
+[tool.falco.crud]
+blueprints = "blueprints"
 
 [tool.hatch.env]
 requires = [
