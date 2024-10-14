@@ -100,7 +100,6 @@ THIRD_PARTY_APPS = [
     "django_htmx",
     "django_q",
     "django_q_registry",
-    "django_tailwind_cli",
     "falco_ui.favicons",
     "falco_toolbox",
     "health_check",
