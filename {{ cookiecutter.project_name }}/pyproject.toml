@@ -34,7 +34,6 @@ dependencies = [
   "diskcache",
   "environs[django]",
   "falco-app",
-  "falco-ui",
   "heroicons[django]",
   "granian",
   "boto3",

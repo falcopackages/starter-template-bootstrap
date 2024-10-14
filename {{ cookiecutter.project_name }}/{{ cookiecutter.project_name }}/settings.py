@@ -119,8 +119,13 @@ THIRD_PARTY_APPS = [
     "django_litestream",
     "django_q",
     "django_q_registry",
+<<<<<<< HEAD
     "django_tailwind_cli",
     "falco",
+=======
+    "falco_ui.favicons",
+    "falco_toolbox",
+>>>>>>> 3c56c75 (oops not tailwind here)
     "health_check",
     "health_check.cache",
     "health_check.contrib.migrations",
