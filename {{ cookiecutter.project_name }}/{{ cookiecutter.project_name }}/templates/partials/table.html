@@ -1,0 +1,40 @@
+{% load falco %}
+
+
+<table class="table table-sm mb-0 font-13 table-hover text-start text-nowrap">
+    <thead>
+        
+            <tr>
+                {% for  header in objects|field_verbose_names:fields %}
+                <th scope="col">{{ header }}</th>
+                {% endfor %}
+                <th scope="col">Actions</th>
+            </tr>
+        
+    </thead>
+    <tbody>
+        {% for object in objects %}
+        
+            <tr class="border py-3">
+                {% for field in fields %}
+                    <td>{{ object|getattr:field }}</td>
+                {% endfor %}
+                <td class="border-start">
+                    
+                    <a class="ps-2" href="{{ detail_view_url|safe }}">View
+                    </a>|
+                    <a class="ps-2" href="{{ update_view_url|safe }}">Edit
+                    </a>|
+                    <a class="cursor-pointer ps-2"
+                        hx-target="closest tr"
+                        hx-swap="outerHTML"
+                        hx-confirm="Are you sure you?"
+                        hx-delete="{{ delete_view_url|safe }}">
+                        Delete
+                    </a>
+                </td>
+            </tr>
+            
+        {% endfor %}
+    </tbody>
+</table>

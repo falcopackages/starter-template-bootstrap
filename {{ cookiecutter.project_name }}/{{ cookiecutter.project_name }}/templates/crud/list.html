@@ -1,0 +1,33 @@
+{% verbatim %}
+{% extends 'base.html' %}
+{% load partials %}
+
+{% block content %}
+{% endverbatim %}
+    <section class="d-flex justify-content-between">
+        <h1 class="text-lg text-bold align-self-center py-4">{{ model_verbose_name_plural|capitalize }}</h1>
+        <a href="{{ create_view_url|safe }}" class="align-self-center btn btn-primary">
+            New {{ model_name|capitalize }}
+        </a>
+    </section>
+
+{% verbatim %}
+  {% partialdef table inline=True %}
+
+    <div id="table">
+        <div class="card card-h-100 w-100">
+            <div class="card-body pt-0">
+                <div class="table-responsive mt-3">
+                    {% endverbatim %}
+                    {{ table_block|safe }}
+                    {{ pagination_block|safe }}
+                    {% verbatim %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endpartialdef %}
+{% endblock content %}
+{% endverbatim %}
